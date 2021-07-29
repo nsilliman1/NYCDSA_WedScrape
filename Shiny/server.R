@@ -12,7 +12,7 @@ shinyServer(function(input, output){
           geom_point() +
           theme_bw() +
           ylab("Daily Price") +
-          xlab("Date") +
+          xlab("Month") +
           xlim(start, end)
     )
     output$activity2 <- renderPlot(
@@ -23,6 +23,8 @@ shinyServer(function(input, output){
           ggplot(aes(x = post_month, y = n)) +
             geom_line() +
             geom_point() +
+            ylab("Intital Posts") +
+            xlab("Month") +
             theme_bw()
     )
     output$activity3 <- renderPlot(
@@ -32,6 +34,8 @@ shinyServer(function(input, output){
           ggplot(aes(x = reply_month, y = n)) +
             geom_line() +
             geom_point() +
+            ylab("All Posts") +
+            xlab("Month") +
             theme_bw()
     )
     output$activity4 <- renderPlot(
@@ -39,6 +43,8 @@ shinyServer(function(input, output){
         ggplot(aes(x = min_time2_month, y = cumsum)) +
           geom_line() +
           geom_point() +
+          ylab("Cumulative Unique Users") +
+          xlab("Month") +
           theme_bw()
     )
     output$explore <- renderPlot(
